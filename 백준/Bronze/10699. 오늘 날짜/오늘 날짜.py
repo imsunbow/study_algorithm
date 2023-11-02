@@ -1,6 +1,6 @@
 import datetime
 
-# 현재 날짜와 시간을 가져옵니다
+# 현재 날짜와 시간을 가져옴
 current_datetime = datetime.datetime.now()
 
 # 9시간을 더함
