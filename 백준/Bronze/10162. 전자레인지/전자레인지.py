@@ -10,12 +10,11 @@ def timer(N):
     C = N // 10
     N %= 10
 
-    if N !=0:
+    if N != 0:
         return -1
 
     return f"{A} {B} {C}"
 
 print(timer(N))
-
 
 
