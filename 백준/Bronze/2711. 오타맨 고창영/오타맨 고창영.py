@@ -6,9 +6,6 @@ for _ in range(S):
     a,b = input().split()
     a = int(a)
 
-    text = b[:a-1] + b[a:]
-    print(text)
-
-
+    print(b[:a-1] + b[a:])
 
 
