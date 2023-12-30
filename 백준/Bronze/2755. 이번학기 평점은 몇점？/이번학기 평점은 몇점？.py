@@ -8,8 +8,6 @@ rating = {"A+": 4.3, "A0": 4.0, "A-":3.7, "B+": 3.3, "B0": 3.0, "B-":2.7, "C+": 
 N = int(input())
 for _ in range(N):
     subject, score, grade = input().split()
-    if grade =='P':
-        continue
     rate += float(score) * rating[grade]
     sum += float(score)
 
