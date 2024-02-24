@@ -1,4 +1,13 @@
 #백준 15858: Simple Arithmatic
 
-a,b,c = map(int,input().split())
-print(a*b/c)
+from decimal import Decimal
+
+try:
+    a, b, c = map(int, input().split())
+    result = Decimal(a) * Decimal(b) / Decimal(c)
+    print(result)
+except ZeroDivisionError:
+    print()
+except ValueError:
+    print()
+
