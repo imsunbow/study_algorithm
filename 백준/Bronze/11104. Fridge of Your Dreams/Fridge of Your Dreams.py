@@ -1,6 +1,6 @@
 #백준 11104: 꿈의냉장고
 
-t = int(input())
-for _ in range(t):
+for _ in range(int(input())):
     a = int(input(),2)
-    print(a)
+    print(int(a))
+
