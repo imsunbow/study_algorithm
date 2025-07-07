@@ -1,10 +1,6 @@
 # 백준 13705: Ax + Bsinx = C
 
-import math
-import decimal
-import sys
-
-input = sys.stdin.readline
+import math,decimal,sys;input = sys.stdin.readline
 
 # set decimal precision
 decimal.getcontext().prec = 100
@@ -14,7 +10,7 @@ decimal.getcontext().rounding = decimal.ROUND_HALF_UP
 a, b, c = map(decimal.Decimal, input().split())
 
 # set pi with high precision (reason why we use decimal is to avoid floating point precision issues)
-pi = decimal.Decimal("3.1415926535897932384626433832795028841")
+pi = decimal.Decimal("3.1415926535897932384")
 
 # precision for convergence
 precision = decimal.Decimal("0." + ("0" * 50) + "1")
