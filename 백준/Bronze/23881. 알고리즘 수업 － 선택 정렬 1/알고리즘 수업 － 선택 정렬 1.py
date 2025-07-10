@@ -1,5 +1,8 @@
 # 백준 23881 : 알고리즘 수업1
 
+import sys
+input = sys.stdin.readline
+
 n,k = map(int, input().split())
 arr = list(map(int, input().split()))
 
@@ -15,5 +18,5 @@ for i in range(n-1,0,-1):
         cnt += 1
         if cnt == k:
             print(arr[index],arr[i])
-            exit()
+            sys.exit()
 print(-1)
