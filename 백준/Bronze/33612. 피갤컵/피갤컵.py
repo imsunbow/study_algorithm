@@ -2,13 +2,11 @@
 
 n = int(input())
 
-if n == 1:
-    print("2024 8")
-elif n == 2:
-    print("2025 3")
-elif n == 3:
-    print("2025 10")
-elif n == 4:
-    print("2026 5")
-else:
-    print("2026 12")
+y = 2024
+m = 8 + 7 * (n - 1) # increase month by input value
+
+while m > 12:
+    y += 1
+    m -= 12
+
+print(y, m)
