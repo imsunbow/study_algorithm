@@ -1,11 +1,13 @@
 import sys
-from decimal import Decimal, getcontext
-
-getcontext().prec = 101 # precize should be over 100 
-
 input = sys.stdin.readline
 
-a,b = map(int,input().split())
-res =  Decimal(a)/ Decimal(b)
+a, b = map(int,input().split())
 
-print(f"{res:.100f}")
+res = [str(a//b), '.']
+a = (a % b) * 10 
+
+for _ in range(2001):
+    res.append(str(a // b))
+    a = (a % b) * 10
+    
+print(''.join(res))
