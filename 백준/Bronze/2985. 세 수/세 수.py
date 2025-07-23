@@ -6,7 +6,7 @@ a, b, c = map(int, input().split())
 ops = [('+', lambda x, y: x + y),
        ('-', lambda x, y: x - y),
        ('*', lambda x, y: x * y),
-       ('/', lambda x, y: x / y if y != 0 else None)]
+       ('/', lambda x, y: x / y)]
 
 for sym, op in ops:
     if op(a, b) == c: # case 1 : operation result equals c
