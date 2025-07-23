@@ -3,7 +3,7 @@
 t = int(input())
 
 for _ in range(t):
-    emp = input("")
+    emp = input()
     n = int(input())
     candy_lst = [int(input()) for _ in range(n)]
     print('YES' if sum(candy_lst) % n == 0 else 'NO')   
