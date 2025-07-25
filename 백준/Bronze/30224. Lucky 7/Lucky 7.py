@@ -1,2 +1,13 @@
 n = int(input())
-print(3 if '7' in str(n) and n % 7 == 0 else 2 if '7' in str(n) else 1 if n % 7 == 0 else 0)
+
+has_7 = '7' in str(n)
+div_7 = n % 7 == 0
+
+if not has_7 and not div_7:
+    print(0)
+elif not has_7 and div_7:
+    print(1)
+elif has_7 and not div_7:
+    print(2)
+else:
+    print(3)
