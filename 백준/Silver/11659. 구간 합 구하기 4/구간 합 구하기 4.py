@@ -1,18 +1,17 @@
-#백준 11659: 구간 합 구하기 4
 import sys
+input = sys.stdin.readline
 
-n,m = map(int,sys.stdin.readline().split())
+n, m = map(int, input().split())
+
+num_lst = list(map(int, input().split()))
 
 prefix_sum = [0]
-current_sum = 0
+total = 0
 
-#부분합 구하기
-for num in map(int, sys.stdin.readline().split()):
-    current_sum += num
-    prefix_sum.append(current_sum)
-
-#결과 출력
+for num in num_lst:
+    total += num
+    prefix_sum.append(total)
+    
 for _ in range(m):
-    a, b = map(int, sys.stdin.readline().split())
-    result = prefix_sum[b] - prefix_sum[a - 1]
-    print(result)
+    i, j = map(int, input().split())
+    print(prefix_sum[j] - prefix_sum[i - 1])
