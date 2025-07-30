@@ -1,16 +1,7 @@
-import sys
-import heapq
+import sys,heapq
 
 input = sys.stdin.readline
-
-n = int(input())
-
-lst = []
-
-for _ in range(n):
-    size = int(input())
-    lst.append(size)
-    
+lst = [int(input()) for _ in range(int(input()))]
 lst.sort()
 
 cnt = 0
