@@ -1,7 +1,7 @@
 # 백준 12015: 가장 긴 증가하는 부분 수열 2
 
 import sys
-import bisect
+from bisect import bisect_left
 
 input = sys.stdin.readline
 
@@ -11,7 +11,7 @@ a = list(map(int, input().split()))
 dp = []
 
 for x in a:
-    idx = bisect.bisect_left(dp, x) # find location to insert x in dp using bs
+    idx = bisect_left(dp, x) # find location to insert x in dp using bs
     if idx == len(dp): # if x is greater than all elements in dp
         dp.append(x) # append
     else:
