@@ -1,9 +1,10 @@
 x = int(input())
 n = int(input())
 
-s = 0
+sum_price = 0
+
 for _ in range(n):
-  a,b = map(int,input().split())
-  s += a*b
-  
-print("Yes" if s==x else "No")  
+    price, quantity = map(int, input().split())
+    sum_price += price * quantity
+    
+print("Yes" if sum_price == x else "No")
