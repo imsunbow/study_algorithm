@@ -1,8 +1,6 @@
-#백준 25305: 커트라인
+n, k = map(int, input().split())
 
-N,k = map(int,input().split())
+score = list(map(int, input().split()))
+score.sort(reverse=True)
 
-a = list(map(int,input().split()))
-a.sort(reverse=True)
-print(a[k-1])
-
+print(score[k - 1])
