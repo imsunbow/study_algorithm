@@ -2,9 +2,6 @@ import sys
 
 input = sys.stdin.readline
 
-# def is_palindrome(s):
-#     return s == s[::-1]
-
 def get_next_palindrome(num_str):
     n = len(num_str)
     num = int(num_str)
@@ -17,19 +14,23 @@ def get_next_palindrome(num_str):
     mid = n // 2
     is_odd = n % 2
     
-    left = num_str[:mid + is_odd]
-    right = num_str[mid + is_odd:]
-    
+    # make candidate palindrome by mirroing the left half
+    left = num_str[:mid + is_odd]    
     mirrored = left[:mid][::-1]
     candidate = left + mirrored
     
+    # if candidate is greater than num, return it (it is the next palindrome)
     if int(candidate) > num:
         return candidate
     
+    # else: increment the left half and mirror again
     left_int = int(left) + 1
     left_str = str(left_int)
+
+    # re-mirror the left half till it fits the original length
+    if len(left_str) > len(left):
+        return "1" + "0" * (n - 1) + "1"
         
-    left_str = left_str.zfill(len(left))
     return left_str + left_str[:mid][::-1]
 
 num_str = input().strip()
