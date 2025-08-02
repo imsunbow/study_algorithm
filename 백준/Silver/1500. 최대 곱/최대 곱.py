@@ -1,0 +1,3 @@
+s, k = map(int, input().split())
+q, r = divmod(s, k) 
+print((q + 1) ** r * q ** (k - r))
