@@ -1,46 +1,47 @@
-#백준 1260: DFS와 BFS
+from collections import deque
 
+def dfs(node, visited):
+    visited[node] = True
+    dfs_lst.append(node)
+    
+    for next_node in adj_node[node]:
+        if not visited[next_node]:
+            dfs(next_node, visited)
+                        
+def bfs(start):
+    visited = [False] * (n + 1)
+    queue = deque([start])
+    visited[start] = True
+    bfs_lst.append(start)
+    
+    while queue:
+        current = queue.popleft()
+        
+        for next_node in adj_node[current]:
+            if not visited[next_node]:
+                queue.append(next_node)
+                visited[next_node] = True
+                bfs_lst.append(next_node)
+    
+n, m, v = map(int, input().split())
 
-def dfs(c):
-    ans_dfs.append(c) # 방문 노드 추가
-    v[c] = 1    # 방문 표시
+adj_node = [[] for _ in range(n + 1)]
 
-    for n in adj[c]:
-        if not v[n]: # 방문하지 않은 노드일 경우
-            dfs(n) # dfs 방문
+for _ in range(m):
+    s, e = map(int, input().split())
+    adj_node[s].append(e) # no-directional graph
+    adj_node[e].append(s)
+    
+    
+for i in range(1, n + 1):
+    adj_node[i].sort()  # Sort the adjacency list for consistent traversal order
+        
+dfs_lst = []
+bfs_lst = []
 
-def bfs(s):
-    q = [] #변수 생성
+visited_dfs = [False] * (n + 1)
+dfs(v, visited_dfs)
+bfs(v)
 
-    q.append(s) #초기 데이터 삽입
-    ans_bfs.append(s)
-    v[s] = 1
-
-    while q:
-        c = q.pop(0)
-        for n in adj[c]:
-            if not v[n]:
-                q.append(n)
-                ans_bfs.append(n)
-                v[n] = 1
-
-N,M,V = map(int,input().split())
-adj = [[] for _ in range(N+1)]
-for _ in range(M):
-    s,e = map(int,input().split())
-    adj[s].append(e)
-    adj[e].append(s)
-
-for i in range(1,N+1):
-    adj[i].sort()
-
-v = [0]*(N+1)
-ans_dfs = []
-dfs(V)
-
-v = [0]*(N+1)
-ans_bfs = []
-bfs(V)
-
-print(*ans_dfs)
-print(*ans_bfs)
+print(*dfs_lst)
+print(*bfs_lst)
