@@ -1,20 +1,19 @@
-def count_partitions():
-    import sys
-    input = sys.stdin.read
-    N = int(input())
-    total = N * (N + 1) // 2
-    if total % 2 != 0:
-        print(0)
-        return
-    
-    target = total // 2
-    dp = [0] * (target + 1)
-    dp[0] = 1
-    
-    for num in range(1, N+1):
-        for k in range(target, num-1, -1):
-            dp[k] += dp[k - num]
-    
-    print(dp[target] // 2)
+import sys
 
-count_partitions()
+input = sys.stdin.readline
+
+n = int(input())
+total_way = n * (n + 1) // 2
+
+if total_way % 2 != 0:
+    print(0)
+else:
+    total_way //= 2
+    dp = [0] * (total_way + 1)
+    dp[0] = 1
+
+    for i in range(1, n + 1):
+        for j in range(total_way, i - 1, -1):
+            dp[j] += dp[j - i]
+
+    print(dp[total_way] // 2)
