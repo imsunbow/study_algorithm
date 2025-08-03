@@ -1,4 +1,7 @@
+import sys
 from collections import deque
+
+input = sys.stdin.readline
 
 def dfs(node, visited):
     visited[node] = True
@@ -8,8 +11,7 @@ def dfs(node, visited):
         if not visited[next_node]:
             dfs(next_node, visited)
                         
-def bfs(start):
-    visited = [False] * (n + 1)
+def bfs(start, visited):
     queue = deque([start])
     visited[start] = True
     bfs_lst.append(start)
@@ -29,19 +31,20 @@ adj_node = [[] for _ in range(n + 1)]
 
 for _ in range(m):
     s, e = map(int, input().split())
-    adj_node[s].append(e) # no-directional graph
+    adj_node[s].append(e)
     adj_node[e].append(s)
     
-    
 for i in range(1, n + 1):
-    adj_node[i].sort()  # Sort the adjacency list for consistent traversal order
+    adj_node[i].sort()
         
 dfs_lst = []
 bfs_lst = []
 
 visited_dfs = [False] * (n + 1)
 dfs(v, visited_dfs)
-bfs(v)
+
+visited_bfs = [False] * (n + 1)
+bfs(v, visited_bfs)
 
 print(*dfs_lst)
 print(*bfs_lst)
