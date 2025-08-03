@@ -1,4 +1,5 @@
 import sys
+from math import comb
 
 input = sys.stdin.readline
 
@@ -15,6 +16,6 @@ for i in range(n):
 result = remainder_count[0]
 
 for count in remainder_count:
-    result += count * (count - 1) // 2
+    result += comb(count, 2)
     
 print(result)
