@@ -20,13 +20,6 @@ def convert(s):
         integer = non_repeat[:dot]
         decimal = non_repeat[dot+1:]
     
-    # if not integer:
-    #     integer = "0"
-    # if not decimal:
-    #     decimal = ""
-    # if not repeat:
-    #     return fractions.Fraction(0)
-    
     try:
         full_num = int(integer + decimal + repeat)
         non_repeat_str = integer + decimal
