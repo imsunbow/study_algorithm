@@ -1,7 +1,10 @@
+import sys
 from collections import deque
 
-s = input()
-t = input()
+input = sys.stdin.readline
+
+s = input().strip()
+t = input().strip()
 
 queue = deque([t])
 visited = set([t])
