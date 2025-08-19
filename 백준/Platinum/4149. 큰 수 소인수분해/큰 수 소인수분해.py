@@ -12,7 +12,7 @@ sys.setrecursionlimit(10 ** 5)
 def is_prime(n):
     if n < 2:
         return False
-    for p in [2, 3, 5, 7, 11]:
+    for p in [2, 3, 5, 7, 11, 13, 17, 21, 23, 29, 31, 37, 41]:
         if n % p == 0:
             return n == p # True if n == p else False
 
@@ -23,7 +23,7 @@ def is_prime(n):
         d //= 2
         s += 1
         
-    for a in [2, 3, 5, 7, 11]:
+    for a in [2, 3, 5, 7, 11, 13, 17, 21, 23, 29, 31, 37, 41]:
         if a >= n:
             continue
         x = pow(a, d, n)
@@ -38,6 +38,7 @@ def is_prime(n):
             return False
     return True
 
+# Pollard's Rho algorithm : algorithm used to find a non-trivial factor of n
 def pollard_rho(n):
     if n % 2 == 0:
         return 2
@@ -53,8 +54,7 @@ def pollard_rho(n):
             d = gcd(abs(x - y), n)
         if d != n:
             return d
-
-# Pollard's Rho algorithm : algorithm used to find a non-trivial factor of n
+        
 def factor(n):
     res = []
     def _factor(n):
