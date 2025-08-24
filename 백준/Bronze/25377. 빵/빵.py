@@ -1,12 +1,10 @@
-time = []
+time = float('inf')
 
 n = int(input())
 
 for _ in range(n):
-    a, b  = map(int, input().split())
-    if a < b:
-        time.append(b)
+    a, b = map(int, input().split())
+    if a <= b:
+        time = min(time, b)
 
-time.sort()
-
-print(time[0] if len(time) > 0 else -1)
+print(-1 if time == float('inf') else time)
