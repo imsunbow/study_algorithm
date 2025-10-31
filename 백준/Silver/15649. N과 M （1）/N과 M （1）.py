@@ -1,19 +1,22 @@
-#백준 15649: n과 m (1)
+import sys
 
-n,m = map(int,input().split())
-
-s = []
+input = sys.stdin.readline
 
 def dfs():
-    if len(s) == m:
-        print(" ".join(map(str,s)))
-        return
 
-    for i in range(1,n+1):
-        if i in s:
+    if len(str) == m:
+        print(*str)
+
+    for i in range(1, n + 1):
+        if i in str:
             continue
-        s.append(i)
+        str.append(i)
         dfs()
-        s.pop()
+        str.pop()
+
+
+n, m = map(int, input().split())
+
+str = []
 
 dfs()
