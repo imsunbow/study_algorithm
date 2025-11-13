@@ -11,5 +11,7 @@ for i in range(n):
             
             if card_sum <= m:
                 lst.append(card_sum)
+            
+
                 
-print(max(lst[n:]))
+print(max(lst[n-1:]))
