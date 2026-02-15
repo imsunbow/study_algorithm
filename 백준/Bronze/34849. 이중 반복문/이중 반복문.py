@@ -1,0 +1,1 @@
+print('Accepted' if int(input()) ** 2 <= 10**8  else 'Time limit exceeded')
