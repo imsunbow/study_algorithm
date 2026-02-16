@@ -1,4 +1,1 @@
-m = int(input())
-n = int(input())
-
-print(m * n)
+print(int(input())*int(input()))
